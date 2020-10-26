@@ -1,0 +1,20 @@
+.imageEntreEcran2 {
+  height: 740px;
+  width: 850px;
+  margin: 19px 0px 0px 260px
+}
+.bulleEntreEcran2 {
+  height: 200px;
+  width: 300px;
+  margin:  15px 0px 0px 500px
+}
+.fullScreen {
+  height: 100%;
+  width: 100%;
+}
+.container {
+  height: 100%;
+  width: 100%;
+  background-image: url(./lesmiss.jpeg);
+  background-size: cover;
+}
