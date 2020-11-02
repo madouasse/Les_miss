@@ -1,0 +1,16 @@
+.map__image {
+    width: 50%;
+    float: right;
+}
+.map__image path{
+    fill: #a4ced2;
+    stroke: antiquewhite;
+    stroke-width: 2px;
+}
+
+.map__image path:hover{
+    fill: #32a88f;
+    stroke: antiquewhite;
+    stroke-width: 2px;
+    transition:  fill 0.3s;
+}
