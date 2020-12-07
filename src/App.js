@@ -4,6 +4,9 @@ import koh from "./koh.jpg";
 import RuPauls from "./RuPauls.jpg";
 import "./App.css";
 import MissFrance from "./missFrance";
+import Carte from "./Carte";
+import lien from "./lien";
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -24,31 +27,31 @@ class App extends Component {
     this.state.transitValueRuPauls = "imageEntre";
     this.state.transitValuefontenay = "imageEntre";
     this.state.transitValuekoh = "imageEntre";
-    this.state.nextPage = false;
+    this.state.nextPage = 0;
   }
 
   render() {
     return (
       <div className="App-header">
         {console.log(this.state.nextPage)}
-        {!this.state.nextPage && (
+        {this.state.nextPage == 0 && (
           <div>
             <img
-              onClick={() => this.onClicknext()}
+              onClick={() => this.onClicknext(this.state.nextPage)}
               onMouseEnter={this.transiteRuPaul}
               src={RuPauls}
               className={this.state.transitValueRuPauls}
               alt="RuPauls"
             />
             <img
-              onClick={() => this.onClicknext()}
+              onClick={() => this.onClicknext(this.state.nextPage)}
               onMouseEnter={this.transiteFontenay}
               src={fontenay}
               className={this.state.transitValuefontenay}
               alt="fontenay"
             />
             <img
-              onClick={() => this.onClicknext()}
+              onClick={() => this.onClicknext(this.state.nextPage)}
               onMouseEnter={this.transiteKoh}
               src={koh}
               className={this.state.transitValuekoh}
@@ -56,14 +59,19 @@ class App extends Component {
             />
           </div>
         )}
-        {this.state.nextPage && (
-          <div>
-            {"oui non "}
-            <div>
-              <MissFrance />
-            </div>
-          </div>
-        )}
+        {this.state.nextPage==1 && 
+        <div className="fullScreen container" onClick={() => this.onClicknext(this.state.nextPage)}>
+          <MissFrance 
+        />
+        </div>}
+        {this.state.nextPage >=2 && 
+        <div className="fullScreen container" onClick={() => this.onClicknext(this.state.nextPage)}>
+          <Carte 
+        />
+       
+        </div>
+        }
+        {console.log("pouet " , this.state.nextPage)}
       </div>
     );
   }
@@ -86,8 +94,8 @@ class App extends Component {
     this.setState({ transitValueRuPauls: "imageEntre" });
     return;
   }
-  onClicknext() {
-    this.setState({ nextPage: true });
+  onClicknext(value) {
+    this.setState({ nextPage: value + 1  });
     console.log("oui click in !");
     return;
   }

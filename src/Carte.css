@@ -1,6 +1,14 @@
+.map{
+    width: 100%;
+}
 .map__image {
-    width: 50%;
+    width: 35%;
     float: right;
+}
+.domTom {
+    float: left;
+    display: flex;
+    width: 100%;
 }
 .map__image path{
     fill: #a4ced2;
@@ -14,3 +22,51 @@
     stroke-width: 2px;
     transition:  fill 0.3s;
 }
+
+.map__list{
+    height: 100%;
+    width: 60%;
+    box-sizing: content-box;
+    color: black;
+    float: left;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+.miss__list{
+    width: 45%;
+    margin: auto;
+}
+.infoMiss{
+    font-family:"times new roman";
+    text-align: center;
+}
+.titre{
+    font-family:"URW Chancery L";
+    font-size: 50px;
+    text-align: center;
+    font-style: italic;
+    color : #151185;
+    font-weight: bold ;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+.rating {
+    direction: rtl;
+    text-align: center;
+ }
+ .rating a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 3em;
+    transition: color .4s;
+ }
+ .rating a:hover,
+ .rating a:focus,
+ .rating a:hover ~ a,
+ .rating a:focus ~ a {
+    color: orange;
+    color-adjust: orange;
+    cursor: pointer;
+ }

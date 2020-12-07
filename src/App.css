@@ -15,7 +15,6 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38,6 +37,16 @@
 .transit {
   transition: all 0.75s ease;
   transform: scale(1.045);
+}
+.fullScreen {
+  height: 100%;
+  width: 100%;
+}
+.container {
+  height: 100%;
+  width: 100%;
+  background-image: url(./missfrance.jpg);
+  background-size: cover;
 }
 @keyframes App-logo-spin {
   from {

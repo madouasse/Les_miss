@@ -1,20 +1,26 @@
+import ReactDOM from "react-dom";
+
 function lien() {
     var mapp = document.querySelector("#map")
     console.log('Hola Before !', mapp)
-    /*var mappa = mapp.querySelectorAll("div")
-    console.log('Hola Before !', mappa)
-
-    var mappy = mapp.querySelectorAll("#map")
-    console.log('Hola Before !', mappy)
-*/
-    var paths = document.querySelectorAll('.map__image')
+    if(mapp != null)
+    {
+    var paths = mapp.querySelectorAll('.map__image a')
     console.log('Hola Before !', paths)
-  
+    
+    if (NodeList.prototype.forEach === undefined)
+    {
+      NodeList.prototype.forEach = function (callback)
+      {
+        [].forEach.call(this, callback)
+      }
+    }
     paths.forEach(function (path) {
-      ReactDOM.findDOMNode('onMouseEnter', function (e) {
+      path.addEventListener('mouseenter', function (e) {
         console.log('Hola !')
         }
     )
       })
+    }
   };
   export default lien;
