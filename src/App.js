@@ -5,10 +5,8 @@ import RuPauls from "./RuPauls.jpg";
 import "./App.css";
 import MissFrance from "./missFrance";
 import Carte from "./Carte";
-import lien from "./lien";
 import firebase from "firebase";
 import config from "./configDDB";
-import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 import configBddNote from "./configBddNote";
 
@@ -91,13 +89,13 @@ class App extends Component {
         {this.state.load == true && this.state.loadNoteBolean && this.state.nextPage==-1 &&(
         <div className= "containerbis">   
           <div className= "login">
-            <div className = "UserMdp">
+            <div className = "UserMdp titreId">
               Id : <input id="username" type="text" name="username" value={this.state.id} onChange={this.handleChangeId}></input>
               Mot de passe :<input id="username" type="password" name="username" value={this.state.mdp} onChange={this.handleChangeMdp}></input>
             </div>
             <div className = "Boutton">
-              <button onClick = {() => this.checkLogin(this.state.id,this.state.mdp) }> Login </button>
-              <button
+              <button className = "button" onClick = {() => this.checkLogin(this.state.id,this.state.mdp) }> Login </button>
+              <button className = "button2"
               onClick = {() => this.checkLoginExiste(this.state.id) }> Creer </button>
             </div>
           {this.state.etatId}
@@ -137,7 +135,10 @@ class App extends Component {
         </div>}
         {this.state.nextPage >=2 && 
         <div className="fullScreen container" onClick={() => this.onClicknext(this.state.nextPage)}>
-          <Carte 
+          {console.log("lod", this.state.loadNote[this.state.id])}
+          {console.log("lod", this.state.id)}
+          <Carte lesNote={this.state.loadNote[this.state.id]} 
+          id={this.state.id}
         />
        
         </div>
@@ -177,6 +178,7 @@ class App extends Component {
         {
             this.setState({
               etatId: "Id Ok !",
+              nextPage: 0,
             });
             this.getBdd(id)
         }
@@ -189,7 +191,6 @@ class App extends Component {
     }
     else
     {
-      firebase.database().ref("login/"+this.state.id).set(this.state.mdp)
       this.setState({
         etatId: "Tout es Faux ! Zéro ! T'es mauvais !",
       });    
@@ -199,13 +200,10 @@ class App extends Component {
 
   checkLoginExiste(id)
   {
-  console.log(this.state.loginId, "this.state.loginId", this.state.loginId["ici"])
     if(this.state.loginId != null)
     {
-      console.log(this.state.loginId)
         if(this.state.loginId[id]!=null)
         {
-            console.log("Déja la ",id, "   ", this.state.loginId[id])
             this.setState({
               etatId: "Cet Id est déjà pris !",
             });
@@ -214,6 +212,7 @@ class App extends Component {
           {
             firebase.database().ref("login/"+this.state.id).set(this.state.mdp)
             this.setState({
+              nextPage: 0,
               etatId: "C'est noté !",
             });
           }
@@ -222,6 +221,7 @@ class App extends Component {
     {
       firebase.database().ref("login/"+this.state.id).set(this.state.mdp)
       this.setState({
+        nextPage: 0,
         etatId: "C'est noté !",
       });    
     }
@@ -235,13 +235,11 @@ class App extends Component {
       firebase.database().ref("note/"+id).set(configBddNote)
     }
     this.setState({
-      nextPage: 0,
       login:true,
     }); 
   }
   getBdd(id)
   {
-    console.log(id, "Id load", this.state.loadNote[id])
     this.setState({
       nextPage: 0,
       login:true,

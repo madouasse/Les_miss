@@ -1,174 +1,174 @@
 export default {
-    alsace: {
-      Beauté:"2",
+    "Alsace": {
+      Beaute:"2",
       Eloquence:"2",
       Charisme:"2",
       Charme:"2"
     },
-    aquitaine: {
-      Beauté:"2",
+    "Aquitaine": {
+      Beaute:"2",
       Eloquence:"2",
       Charisme:"2",
       Charme:"2"
     },
-    auvergne: {
-      Beauté:"2",
+    "Auvergne": {
+      Beaute:"2",
       Eloquence:"2",
       Charisme:"2",
       Charme:"2"
     },
-    bourgogne: {
-      Beauté:"2",
+    "Bourgogne": {
+      Beaute:"2",
       Eloquence:"2",
       Charisme:"2",
       Charme:"2"
     },
-    bretagne: {
-      Beauté:"5",
+    "Bretagne": {
+      Beaute:"5",
       Eloquence:"4.5",
       Charisme:"5",
       Charme:"4"
     },
-    centreValdeLoire: {
-      Beauté:"2",
+    "Centre-Val-de-Loire": {
+      Beaute:"2",
       Eloquence:"2",
       Charisme:"2",
       Charme:"2"
     },
-    ChampagneAredenne: {
-      Beauté:"2",
+    "Champagne-Aredenne": {
+      Beaute:"2",
       Eloquence:"2",
       Charisme:"2",
       Charme:"2"
     },
-    corse: {
-      Beauté:"2",
+    "Corse": {
+      Beaute:"2",
       Eloquence:"2",
       Charisme:"2",
       Charme:"2"
     },
-    cotedazur: {
-      Beauté:"2",
+    "Cote d'azur": {
+      Beaute:"2",
       Eloquence:"2",
       Charisme:"2",
       Charme:"2"
     },
-    francheCompte: {
-      Beauté:"2",
+    "Franche-Comté": {
+      Beaute:"2",
       Eloquence:"2",
       Charisme:"2",
       Charme:"2"
     },
-    guadeloupe: {
-      Beauté:"2",
+    "Guadeloupe": {
+      Beaute:"2",
       Eloquence:"2",
       Charisme:"2",
       Charme:"2"
     },
-    guyane: {
-      Beauté:"2",
+    "Guyane": {
+      Beaute:"2",
       Eloquence:"2",
       Charisme:"2",
       Charme:"2"
     },
-    ileDeFrance: {
-      Beauté:"2",
+    "Île-de-France": {
+      Beaute:"2",
       Eloquence:"2",
       Charisme:"2",
       Charme:"2"
     },
-    languedocRoussillon: {
-      Beauté:"2",
+    "Languedoc-Roussillon": {
+      Beaute:"2",
       Eloquence:"2",
       Charisme:"2",
       Charme:"2"
     },
-    limousin: {
-      Beauté:"2",
+    "Limousin": {
+      Beaute:"2",
       Eloquence:"2",
       Charisme:"2",
       Charme:"2"
     },
-    lorraine: {
-      Beauté:"2",
+    "Lorraine": {
+      Beaute:"2",
       Eloquence:"2",
       Charisme:"2",
       Charme:"2"
     },
-    martinique: {
-      Beauté:"2",
+    "Martinique": {
+      Beaute:"2",
       Eloquence:"2",
       Charisme:"2",
       Charme:"2"
     },
-    mayotte: {
-      Beauté:"2",
+    "Mayotte": {
+      Beaute:"2",
       Eloquence:"2",
       Charisme:"2",
       Charme:"2"
     },
-    midiPyrenees: {
-      Beauté:"2",
+    "Midi-Pyrénées": {
+      Beaute:"2",
       Eloquence:"2",
       Charisme:"2",
       Charme:"2"
     },
-    nordPasDeCalais: {
-      Beauté:"2",
+    "Nord-Pas-de-Calais": {
+      Beaute:"2",
       Eloquence:"2",
       Charisme:"2",
       Charme:"2"
     },
-    nouvelleCaledonie: {
-      Beauté:"2",
+    "Nouvelle-Caledonie": {
+      Beaute:"2",
       Eloquence:"2",
       Charisme:"2",
       Charme:"2"
     },
-    paysDeLaLoire: {
-      Beauté:"2",
+    "Pays de la Loire": {
+      Beaute:"2",
       Eloquence:"2",
       Charisme:"2",
       Charme:"2"
     },
-    picardie: {
-      Beauté:"2",
+    "Picardie": {
+      Beaute:"2",
       Eloquence:"2",
       Charisme:"2",
       Charme:"2"
     },
-    poitouCharentes: {
-      Beauté:"2",
+    "Poitou-Charentes": {
+      Beaute:"2",
       Eloquence:"2",
       Charisme:"2",
       Charme:"2"
     },
-    provence: {
-      Beauté:"2",
+    "Provence": {
+      Beaute:"2",
       Eloquence:"2",
       Charisme:"2",
       Charme:"2"
     },
-    reunion: {
-      Beauté:"2",
+    "Reunion": {
+      Beaute:"2",
       Eloquence:"2",
       Charisme:"2",
       Charme:"2"
     },
-    rhoneAlpes: {
-      Beauté:"2",
+    "Rhône-Alpes": {
+      Beaute:"2",
       Eloquence:"2",
       Charisme:"2",
       Charme:"2"
     },
-    wallisEtFutuna: {
-      Beauté:"2",
+    "Wallis et Futuna": {
+      Beaute:"2",
       Eloquence:"2",
       Charisme:"2",
       Charme:"2"
     },
-    normandie: {
-      Beauté:"2",
+    "Normandie": {
+      Beaute:"2",
       Eloquence:"2",
       Charisme:"2",
       Charme:"2"

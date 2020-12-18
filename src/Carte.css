@@ -5,6 +5,9 @@
     width: 35%;
     float: right;
 }
+.carte{
+    cursor: pointer;
+  }
 .domTom {
     display: flex;
     flex-direction: row;;
@@ -69,6 +72,56 @@ margin: auto;
     flex-direction: column;
     margin: auto;
 }
+.buttonSave {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #d5e0a3;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    margin-right: 10px;
+    width: 45%;
+    align-items: center;
+  }
+  
+  .buttonSave:hover {background-color: #61ee6d}
+  
+  .buttonSave:active {
+    background-color: #cbdf73;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+  .buttonFinsh {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #d5e0a3;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    margin-left: 25px;
+    width: 45%;
+    align-items: center;
+  }
+  
+  .buttonFinsh:hover {background-color: #e64040}
+  
+  .buttonFinsh:active {
+    background-color: #cbdf73;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }  
 .rating {
     direction: rtl;
     text-align: center;
@@ -87,3 +140,10 @@ margin: auto;
     color-adjust: orange;
     cursor: pointer;
  }
+
+ .Critere{
+     margin-top: 10px;
+    font-family:"cursive";
+    font-size: 28px;
+    font-style: italic;
+  }
