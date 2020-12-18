@@ -6,9 +6,9 @@
     float: right;
 }
 .domTom {
-    float: left;
     display: flex;
-    width: 100%;
+    flex-direction: row;;
+    float: right;
 }
 .map__image path{
     fill: #a4ced2;
