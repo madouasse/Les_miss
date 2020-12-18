@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8ffd626fa29ff4b37aad01b4b039ed5b",
+    "revision": "c97b016dce581c4e27490675c2669a3c",
     "url": "/Les_miss/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Les_miss/static/css/2.f1b50ea8.chunk.css"
   },
   {
-    "revision": "7aa8ca12a2351693e8f1",
-    "url": "/Les_miss/static/css/main.d89b9153.chunk.css"
+    "revision": "055214ed639852da6d29",
+    "url": "/Les_miss/static/css/main.4ccaef7a.chunk.css"
   },
   {
     "revision": "c30b4e9beff46662640f",
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Les_miss/static/js/2.2858c4d6.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "7aa8ca12a2351693e8f1",
-    "url": "/Les_miss/static/js/main.b14818ef.chunk.js"
+    "revision": "055214ed639852da6d29",
+    "url": "/Les_miss/static/js/main.d7a70360.chunk.js"
   },
   {
     "revision": "65f8f0d67a177a6ab379",
