@@ -25,7 +25,26 @@
 .App-link {
   color: #61dafb;
 }
-
+.UserMdp
+{
+  display:flex ;
+  flex-direction: column;
+}
+.login
+{
+  width: 25%;
+  justify-content: center;
+  margin: auto;
+  align-items: middle;  
+  display:flex ;
+  flex-direction: column;
+}
+.Boutton
+{
+  margin: auto;
+  align-items: middle;  
+  display:flex ;
+}
 .Split {
   display: contents;
   align-content: middle;
@@ -46,6 +65,12 @@
   height: 100%;
   width: 100%;
   background-image: url(./missfrance.jpg);
+  background-size: cover;
+}
+.containerbis {
+  height: 967px;
+  width: 100%;
+  background-image: url(./img_miss/miss.gif);
   background-size: cover;
 }
 @keyframes App-logo-spin {

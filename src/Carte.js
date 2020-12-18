@@ -42,11 +42,18 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import piou from "./piou.jpg";
+import * as firebase from 'firebase';
+import config from './configDDB';
+
 
 var region = "";
 var titre = "";
 var infoMiss = "";
 var click = true;
+var beaute = 2;
+var eloquence = 2;
+var charisme = 2;
+var charme = 2;
 
 const StyledRating = withStyles({
 	iconFilled: {
@@ -233,10 +240,13 @@ const Carte = () => (
 		 <StyledRating
           name="customized-color"
           defaultValue={2}
-          getLabelText={(value1) => `${value1} Heart${value1 !== 1 ? 's' : ''}`}
+          getLabelText={(beaute) => `${beaute} Heart${beaute !== 1 ? 's' : ''}`}
           precision={0.5}
           icon={<FavoriteIcon fontSize="inherit" />}
-		  size="large"/>
+		  size="large"
+		  onChange={e => beaute= e.target.value}
+		  />		
+		  {beaute}
 		</div>  
       </Box>	
 	  <Box className="box" component="fieldset" mb={1} borderColor="transparent">
@@ -246,9 +256,11 @@ const Carte = () => (
           name="customized-color1"
           defaultValue={2}
           getLabelText={(value2) => `${value2} Heart${value2 !== 1 ? 'l' : ''}`}
-          precision={0.5}
+		  precision={0.5}
+		  onChange={e => eloquence= e.target.value}
           icon={<FavoriteIcon fontSize="inherit"/>}
 		 size="large"/>
+		 {eloquence}
 		</div> 
       </Box>
 	  </div>
@@ -260,9 +272,11 @@ const Carte = () => (
           name="customized-color2"
           defaultValue={2}
           getLabelText={(value3) => `${value3} Heart${value3 !== 1 ? 'm' : ''}`}
-          precision={0.5}
+		  precision={0.5}
+		  onChange={e => charisme= e.target.value}
           icon={<FavoriteIcon fontSize="inherit" />}
 		  size="large"/>
+		{charisme}
 		</div>  
       </Box>
 	  <Box className="box" component="fieldset" mb={0} borderColor="transparent">
@@ -272,9 +286,11 @@ const Carte = () => (
           name="customized-color3"
           defaultValue={2}
           getLabelText={(value4) => `${value4} Heart${value4 !== 1 ? 'g' : ''}`}
-          precision={0.5}
+		  precision={0.5}
+		  onChange={e => charme= e.target.value}
           icon={<FavoriteIcon fontSize="inherit" />}
 		  size="large"/>
+		  {charme}
 		</div>	
       </Box>
 	  </div>
