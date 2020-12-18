@@ -1,17 +1,19 @@
 {
   "files": {
-    "main.css": "/Les_miss/static/css/main.16c735cb.chunk.css",
-    "main.js": "/Les_miss/static/js/main.ae519563.chunk.js",
-    "main.js.map": "/Les_miss/static/js/main.ae519563.chunk.js.map",
+    "main.css": "/Les_miss/static/css/main.d89b9153.chunk.css",
+    "main.js": "/Les_miss/static/js/main.b14818ef.chunk.js",
+    "main.js.map": "/Les_miss/static/js/main.b14818ef.chunk.js.map",
     "runtime-main.js": "/Les_miss/static/js/runtime-main.66b79d06.js",
     "runtime-main.js.map": "/Les_miss/static/js/runtime-main.66b79d06.js.map",
-    "static/js/2.eb63b5f5.chunk.js": "/Les_miss/static/js/2.eb63b5f5.chunk.js",
-    "static/js/2.eb63b5f5.chunk.js.map": "/Les_miss/static/js/2.eb63b5f5.chunk.js.map",
+    "static/css/2.f1b50ea8.chunk.css": "/Les_miss/static/css/2.f1b50ea8.chunk.css",
+    "static/js/2.2858c4d6.chunk.js": "/Les_miss/static/js/2.2858c4d6.chunk.js",
+    "static/js/2.2858c4d6.chunk.js.map": "/Les_miss/static/js/2.2858c4d6.chunk.js.map",
     "index.html": "/Les_miss/index.html",
-    "precache-manifest.07c7d6ade591a6daeca2c3886966aebd.js": "/Les_miss/precache-manifest.07c7d6ade591a6daeca2c3886966aebd.js",
+    "precache-manifest.e319e5f0d72fc4b24cb7a064fb573494.js": "/Les_miss/precache-manifest.e319e5f0d72fc4b24cb7a064fb573494.js",
     "service-worker.js": "/Les_miss/service-worker.js",
-    "static/css/main.16c735cb.chunk.css.map": "/Les_miss/static/css/main.16c735cb.chunk.css.map",
-    "static/js/2.eb63b5f5.chunk.js.LICENSE.txt": "/Les_miss/static/js/2.eb63b5f5.chunk.js.LICENSE.txt",
+    "static/css/2.f1b50ea8.chunk.css.map": "/Les_miss/static/css/2.f1b50ea8.chunk.css.map",
+    "static/css/main.d89b9153.chunk.css.map": "/Les_miss/static/css/main.d89b9153.chunk.css.map",
+    "static/js/2.2858c4d6.chunk.js.LICENSE.txt": "/Les_miss/static/js/2.2858c4d6.chunk.js.LICENSE.txt",
     "static/media/Aquitaine.png": "/Les_miss/static/media/Aquitaine.483c6f4f.png",
     "static/media/Auvergne.png": "/Les_miss/static/media/Auvergne.595e535c.png",
     "static/media/Bourgogne.png": "/Les_miss/static/media/Bourgogne.b6a47ffd.png",
@@ -46,14 +48,16 @@
     "static/media/jeanpierrefoucault.png": "/Les_miss/static/media/jeanpierrefoucault.3d9c3d0f.png",
     "static/media/koh.jpg": "/Les_miss/static/media/koh.dac5d443.jpg",
     "static/media/lesmiss.jpeg": "/Les_miss/static/media/lesmiss.dd9d1bdc.jpeg",
+    "static/media/App.css": "/Les_miss/static/media/miss.f0d24866.gif",
     "static/media/MissFrance.css": "/Les_miss/static/media/missfrance.82c1f95f.jpg",
     "static/media/piou.jpg": "/Les_miss/static/media/piou.b412330d.jpg",
     "static/media/Île-de-France.png": "/Les_miss/static/media/Île-de-France.62b113c9.png"
   },
   "entrypoints": [
     "static/js/runtime-main.66b79d06.js",
-    "static/js/2.eb63b5f5.chunk.js",
-    "static/css/main.16c735cb.chunk.css",
-    "static/js/main.ae519563.chunk.js"
+    "static/css/2.f1b50ea8.chunk.css",
+    "static/js/2.2858c4d6.chunk.js",
+    "static/css/main.d89b9153.chunk.css",
+    "static/js/main.b14818ef.chunk.js"
   ]
 }
