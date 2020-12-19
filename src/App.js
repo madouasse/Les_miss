@@ -242,7 +242,7 @@ class App extends Component {
     {
       firebase.database().ref("note/"+id).set("id")
       firebase.database().ref("note/"+id).set(configBddNote)
-      firebase.database().ref("Total").set(configBddTotal)
+      //firebase.database().ref("Total").set(configBddTotal)
     }
     this.setState({
       login:true,

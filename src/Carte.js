@@ -76,6 +76,11 @@ var NumberOftotalId =null;
 var classementT=null;
 var classementTableauNote=null;
 var classementTableauRegion=null;
+var classementPerso=null;
+var classementTotal= new Array;
+var classementTemp=null;
+const regionNom = ["Alsace", "Aquitaine", "Auvergne", "Bourgogne", "Bretagne", "Centre-Val-de-Loire", "Champagne-Aredenne", "Corse", "Cote d'azur", "Franche-Comté", "Guadeloupe", "Guyane", "Île-de-France", "Languedoc-Roussillon", "Limousin", "Lorraine", "Martinique","Mayotte", "Midi-Pyrénées", "Nord-Pas-de-Calais","Normandie", "Nouvelle-Caledonie", "Pays de la Loire", "Picardie", "Poitou-Charentes", "Provence", "Reunion", "Rhône-Alpes", "Wallis et Futuna",]
+
 const useStyles = makeStyles({
 	table: {
 	  minWidth: 650,
@@ -332,33 +337,62 @@ const Carte = (lesNote) => (
 </div>	
 )}
 {nextPage == 1 && (
-<div className="map__image">
-	<TableContainer component={Paper}>
-		<Table className={useStyles} aria-label="simple table">
-			<TableHead>
-			<TableRow>
-				<TableCell>Region</TableCell>
-				<TableCell align="left">Notes</TableCell>
-			</TableRow>
-			</TableHead>
-			<TableBody>
-			{classementTableauRegion.map((row) => (
-				<TableRow key={row}>
-				<TableCell component="th" scope="row">
-					{row}
-				</TableCell>
-				<TableCell align="left">{classementT[row]}</TableCell>
-				</TableRow>
-			))}
-			</TableBody>
-		</Table>
-	</TableContainer>
-		<table className="Style" columns={classementTableauRegion} data={classementTableauNote}>Oui !</table>
-	lalalal
-</div>
+	<div>
+		<div className="map__generale">
+			Classement générale :
+			<TableContainer component={Paper}>
+				<Table className={useStyles} aria-label="simple table">
+					<TableHead>
+					<TableRow>
+						<TableCell>Region</TableCell>
+						<TableCell align="left">Notes</TableCell>
+					</TableRow>
+					</TableHead>
+					<TableBody>
+					{classementTableauRegion.map((row) => (
+						<TableRow key={row}>
+						<TableCell component="th" scope="row">
+							{row}
+						</TableCell>
+						<TableCell align="left">{classementT[row].toFixed(2)}</TableCell>
+						</TableRow>
+					))}
+					</TableBody>
+				</Table>
+			</TableContainer>
+			</div>
+			<div className="map__perso">
+			Classement Perso :
+			<TableContainer component={Paper}>
+				<Table className={useStyles} aria-label="simple table">
+					<TableHead>
+					<TableRow>
+						<TableCell>Region</TableCell>
+						<TableCell align="left">Notes</TableCell>
+					</TableRow>
+					</TableHead>
+					<TableBody>
+					{regionNom.map((row) => (
+						<TableRow key={row}>
+						<TableCell component="th" scope="row">
+							{row}
+						</TableCell>
+						<TableCell align="left">{parseFloat(classementTotal[row].["Total"]).toFixed(2)}</TableCell>
+						</TableRow>
+					))}
+					</TableBody>
+				</Table>
+			</TableContainer>
+		</div>
+		<button className="bouttonRetour" 	onClick={() => retour()} > Retour </button>
+	</div>	
 )}
 </div>
 );
+function retour()
+{
+	nextPage=0;
+}
 
 function IconContainer(props) {
 	const { value, ...other } = props;
@@ -382,13 +416,13 @@ function onClickRegion(image, nomDeRegion, infoMisstext, lesNote) {
 	firebase.database().ref("note/"+lesNote["id"]+"/"+titre+"/"+"Eloquence").set(eloquence);
 	firebase.database().ref("note/"+lesNote["id"]+"/"+titre+"/"+"Beaute").set(beaute);
 	firebase.database().ref("note/"+lesNote["id"]+"/"+titre+"/"+"Charme").set(charme);
-	firebase.database().ref("note/"+lesNote["id"]+"/"+titre+"/"+"Total").set(parseInt(charme)+parseInt(charisme)+parseInt(eloquence)+parseInt(beaute));
+	firebase.database().ref("note/"+lesNote["id"]+"/"+titre+"/"+"Total").set(parseFloat(charme)+parseFloat(charisme)+parseFloat(eloquence)+parseFloat(beaute));
 	totalId = firebase.database().ref("note");
 	totalId.on('value', snapshot => {NumberOftotalId = snapshot.numChildren()})
 
 	var totale = lesNote["totale"]
 	var totalFinaleR = totale[titre]
-	var moyenne=((parseInt(totalFinaleR))*(NumberOftotalId-1)+(parseInt(charme)+parseInt(charisme)+parseInt(eloquence)+parseInt(beaute)))/NumberOftotalId
+	var moyenne=((parseFloat(totalFinaleR))*(NumberOftotalId-1)+(parseFloat(charme)+parseFloat(charisme)+parseFloat(eloquence)+parseFloat(beaute)))/NumberOftotalId
 	firebase.database().ref("Total/"+titre).set(moyenne);
   }	
 
@@ -397,26 +431,38 @@ function onClickRegion(image, nomDeRegion, infoMisstext, lesNote) {
 	firebase.database().ref("note/"+lesNote["id"]+"/"+titre+"/"+"Eloquence").set(eloquence);
 	firebase.database().ref("note/"+lesNote["id"]+"/"+titre+"/"+"Beaute").set(beaute);
 	firebase.database().ref("note/"+lesNote["id"]+"/"+titre+"/"+"Charme").set(charme);
-	firebase.database().ref("note/"+lesNote["id"]+"/"+titre+"/"+"Total").set(parseInt(charme)+parseInt(charisme)+parseInt(eloquence)+parseInt(beaute));
+	firebase.database().ref("note/"+lesNote["id"]+"/"+titre+"/"+"Total").set(parseFloat(charme)+parseFloat(charisme)+parseFloat(eloquence)+parseFloat(beaute));
 	totalId = firebase.database().ref("note");
 	totalId.on('value', snapshot => {NumberOftotalId = snapshot.numChildren()})
 
 	var totale = lesNote["totale"]
 	var totalFinaleR = totale[titre]
-	var moyenne=((parseInt(totalFinaleR))*(NumberOftotalId-1)+(parseInt(charme)+parseInt(charisme)+parseInt(eloquence)+parseInt(beaute)))/NumberOftotalId
+	var moyenne=((parseFloat(totalFinaleR))*(NumberOftotalId-1)+(parseFloat(charme)+parseFloat(charisme)+parseFloat(eloquence)+parseFloat(beaute)))/NumberOftotalId
 	firebase.database().ref("Total/"+titre).set(moyenne);
 	var classement = firebase.database().ref("Total");
-	classement.on('value', snapshot => {classementT = snapshot.val()})
-	console.log("classement :",classementT)
-	//classementT = Object.values(result)
+	classement.on('value', snapshot => {classementT = snapshot.toJSON()})
 		classementTableauRegion = (Object.keys(classementT));
 		classementTableauNote = (Object.values(classementT));
-	
-	console.log("classement !!!!:",classementTableauRegion)
+
+		var TableauRegionNote =[classementTableauRegion, classementTableauNote]
+		var classementPerso = firebase.database().ref("note/"+lesNote["id"]);
+		var classementTotalTemp
+		classementPerso.on('value', snapshot => {classementTotal = snapshot.toJSON()})
+/*
+		for(var i =0 ;i < regionNom.length; i++)
+		{
+			var classementTotalTemp = classementTemp[regionNom[i]]
+			
+			classementTotal[i] = parseFloat(classementTotalTemp["Beaute"])+parseFloat(classementTotalTemp["Charme"])+parseFloat(classementTotalTemp["Charisme"])+parseFloat(classementTotalTemp["Eloquence"])
+			console.log("classementTotal !!!! classementTotal:",classementTotal, regionNom.length, i)
+		}
+		console.log("classementTotal !!!! classementTotal:",classementTotal)
+*/
+	console.log("classement !!!!:",TableauRegionNote)
 	console.log("classement Note!!!!:",classementTableauNote)
 	nextPage=1;
   }	
-
+ 
   function onClickDoubleRegion(image1, nomDeRegion1, infoMisstext,lesNote, image2, nomDeRegion2, infoMisstext2) {
 	if(click)
 	{

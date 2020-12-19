@@ -104,13 +104,6 @@ export default {
       Charme:"2",
       Total:"8"
     },
-    "Lorraine": {
-      Beaute:"2",
-      Eloquence:"2",
-      Charisme:"2",
-      Charme:"2",
-      Total:"8"
-    },
     "Martinique": {
       Beaute:"2",
       Eloquence:"2",
@@ -133,6 +126,13 @@ export default {
       Total:"8"
     },
     "Nord-Pas-de-Calais": {
+      Beaute:"2",
+      Eloquence:"2",
+      Charisme:"2",
+      Charme:"2",
+      Total:"8"
+    },
+    "Normandie": {
       Beaute:"2",
       Eloquence:"2",
       Charisme:"2",
@@ -195,11 +195,5 @@ export default {
       Charme:"2",
       Total:"8"
     },
-    "Normandie": {
-      Beaute:"2",
-      Eloquence:"2",
-      Charisme:"2",
-      Charme:"2",
-      Total:"8"
-    }
+
   }

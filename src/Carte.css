@@ -151,3 +151,41 @@ margin: auto;
     font-size: 28px;
     font-style: italic;
   }
+
+.map__generale{
+    margin-right: 20px;
+    width: 38%;
+    float: right;
+}
+.map__perso{
+    margin-left: 20px;
+    width: 38%;
+    float: left;
+}
+
+.bouttonRetour {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #d5e0a3;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    margin-left: 38%;
+    margin-top: 20px;
+    width: 25%;
+    align-items: center;
+  }
+
+  .bouttonRetour:hover {background-color: #e64040}
+  
+  .bouttonRetour:active {
+    background-color: #cbdf73;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }  
