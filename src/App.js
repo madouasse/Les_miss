@@ -9,6 +9,7 @@ import firebase from "firebase";
 import config from "./configDDB";
 import 'reactjs-popup/dist/index.css';
 import configBddNote from "./configBddNote";
+import configBddTotal from "./configBddTotal";
 
 class App extends Component {
   constructor(props) {
@@ -34,7 +35,9 @@ class App extends Component {
       loginId:null,
       etatId:null,
       loadNote:null,
-      loadNoteBolean:false
+      loadNoteBolean:false,
+      totale:false
+
     };
     this.transiteRuPaul = this.transiteRuPaul.bind(this);
     this.transiteFontenay = this.transiteFontenay.bind(this);
@@ -58,6 +61,13 @@ class App extends Component {
     loginIdMdp.on('value', snapshot => {
       this.setState({
         loginId: snapshot.val(),
+        load:true
+      })
+    })
+    const totalDesPoints = firebase.database().ref("Total");
+    totalDesPoints.on('value', snapshot => {
+      this.setState({
+        totale: snapshot.val(),
         load:true
       })
     })
@@ -135,10 +145,9 @@ class App extends Component {
         </div>}
         {this.state.nextPage >=2 && 
         <div className="fullScreen container" onClick={() => this.onClicknext(this.state.nextPage)}>
-          {console.log("lod", this.state.loadNote[this.state.id])}
-          {console.log("lod", this.state.id)}
           <Carte lesNote={this.state.loadNote[this.state.id]} 
           id={this.state.id}
+          totale={this.state.totale}
         />
        
         </div>
@@ -233,6 +242,7 @@ class App extends Component {
     {
       firebase.database().ref("note/"+id).set("id")
       firebase.database().ref("note/"+id).set(configBddNote)
+      firebase.database().ref("Total").set(configBddTotal)
     }
     this.setState({
       login:true,

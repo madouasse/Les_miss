@@ -89,7 +89,11 @@ margin: auto;
     width: 45%;
     align-items: center;
   }
-  
+  .table {
+    border-spacing: 0;
+    border: 1px solid black;
+  }
+
   .buttonSave:hover {background-color: #61ee6d}
   
   .buttonSave:active {

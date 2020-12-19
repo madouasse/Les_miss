@@ -1,6 +1,7 @@
 import React from "react";
 import "./Carte.css";
 import lien from "./lien";
+import { AgGridColumn, AgGridReact } from 'ag-grid-react';
 
 import normandie from "./img_miss/Normandie.png";
 import alsace from "./img_miss/alsace.png";
@@ -46,6 +47,16 @@ import firebase from "firebase";
 import config from './configDDB';
 import { BottomNavigation } from "@material-ui/core";
 
+import { makeStyles } from '@material-ui/core/styles';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
+
+
 
 var region = "";
 var titre = "";
@@ -57,6 +68,20 @@ var charisme = null;
 var charme = null;
 var notes = null;
 var noteRegion = null;
+var nextPage = 0;
+var totalIdRegion = null;
+var totalRegion = null;
+var totalId = null;
+var NumberOftotalId =null;
+var classementT=null;
+var classementTableauNote=null;
+var classementTableauRegion=null;
+const useStyles = makeStyles({
+	table: {
+	  minWidth: 650,
+	},
+  });
+
 var StyledRating = withStyles({
 	iconFilled: {
 	  color: '#ff6d75',
@@ -91,6 +116,8 @@ var StyledRating = withStyles({
 const Carte = (lesNote) => (
 
 <div className="map">
+{nextPage == 0 && (
+	<div>
 {console.log("id :",lesNote)}
   <div className="map__image">
   <svg viewBox="0 0 620 585">
@@ -296,12 +323,41 @@ const Carte = (lesNote) => (
 	  	onClick={() => updateBddNote(lesNote, titre, eloquence, beaute, charisme, charme)} >Enregistrer
 	  </button>
 	  <button className="buttonFinsh"
-	  	onClick={() => updateBddNote(lesNote, titre, eloquence, beaute, charisme, charme)} > Suivant
+	  	onClick={() => updateBddNoteNextPage(lesNote, titre, eloquence, beaute, charisme, charme)} > Suivant
 	  </button>
 	  </div>
 	</div>
   </div>
   }
+</div>	
+)}
+{nextPage == 1 && (
+<div className="map__image">
+	<TableContainer component={Paper}>
+		<Table className={useStyles} aria-label="simple table">
+			<TableHead>
+			<TableRow>
+				<TableCell>Region</TableCell>
+				<TableCell align="right">Notes</TableCell>
+			</TableRow>
+			</TableHead>
+			<TableBody>
+			{classementTableauRegion.map((row) => (
+				<TableRow key={row}>
+				<TableCell component="th" scope="row">
+					{row}
+				</TableCell>
+				<TableCell align="right">{classementTableauRegion[row]}</TableCell>
+				<TableCell align="right">{classementT[row]}</TableCell>
+				</TableRow>
+			))}
+			</TableBody>
+		</Table>
+	</TableContainer>
+		<table className="Style" columns={classementTableauRegion} data={classementTableauNote}>Oui !</table>
+	lalalal
+</div>
+)}
 </div>
 );
 
@@ -314,31 +370,60 @@ function onClickRegion(image, nomDeRegion, infoMisstext, lesNote) {
 	region = image;
 	titre = nomDeRegion
 	infoMiss = infoMisstext
-	console.log("value", titre);
 	notes = lesNote["lesNote"];
 	noteRegion = notes[nomDeRegion];
-	{console.log("id :", lesNote["id"], "titre :", titre,"  noteRegion :", noteRegion["Beaute"])}  
 	beaute=noteRegion["Beaute"];
 	charme=noteRegion["Charme"];
 	charisme=noteRegion["Charisme"];
 	eloquence=noteRegion["Eloquence"];
-	console.log(beaute, noteRegion["Charme"], charisme, eloquence);
-
     return;
   }
   function updateBddNote(lesNote,titre, eloquence, beaute, charisme, charme) {
-	firebase.database().ref("note/"+lesNote["id"]+"/"+titre+"/"+"Charisme").set(charisme)
-	firebase.database().ref("note/"+lesNote["id"]+"/"+titre+"/"+"Eloquence").set(eloquence)
-	firebase.database().ref("note/"+lesNote["id"]+"/"+titre+"/"+"Beaute").set(beaute)
-	firebase.database().ref("note/"+lesNote["id"]+"/"+titre+"/"+"Charme").set(charme)
+	firebase.database().ref("note/"+lesNote["id"]+"/"+titre+"/"+"Charisme").set(charisme);
+	firebase.database().ref("note/"+lesNote["id"]+"/"+titre+"/"+"Eloquence").set(eloquence);
+	firebase.database().ref("note/"+lesNote["id"]+"/"+titre+"/"+"Beaute").set(beaute);
+	firebase.database().ref("note/"+lesNote["id"]+"/"+titre+"/"+"Charme").set(charme);
+	firebase.database().ref("note/"+lesNote["id"]+"/"+titre+"/"+"Total").set(parseInt(charme)+parseInt(charisme)+parseInt(eloquence)+parseInt(beaute));
+	totalId = firebase.database().ref("note");
+	totalId.on('value', snapshot => {NumberOftotalId = snapshot.numChildren()})
+
+	var totale = lesNote["totale"]
+	var totalFinaleR = totale[titre]
+	var moyenne=((parseInt(totalFinaleR))*(NumberOftotalId-1)+(parseInt(charme)+parseInt(charisme)+parseInt(eloquence)+parseInt(beaute)))/NumberOftotalId
+	firebase.database().ref("Total/"+titre).set(moyenne);
   }	
+
+  function updateBddNoteNextPage(lesNote,titre, eloquence, beaute, charisme, charme) {
+	firebase.database().ref("note/"+lesNote["id"]+"/"+titre+"/"+"Charisme").set(charisme);
+	firebase.database().ref("note/"+lesNote["id"]+"/"+titre+"/"+"Eloquence").set(eloquence);
+	firebase.database().ref("note/"+lesNote["id"]+"/"+titre+"/"+"Beaute").set(beaute);
+	firebase.database().ref("note/"+lesNote["id"]+"/"+titre+"/"+"Charme").set(charme);
+	firebase.database().ref("note/"+lesNote["id"]+"/"+titre+"/"+"Total").set(parseInt(charme)+parseInt(charisme)+parseInt(eloquence)+parseInt(beaute));
+	totalId = firebase.database().ref("note");
+	totalId.on('value', snapshot => {NumberOftotalId = snapshot.numChildren()})
+
+	var totale = lesNote["totale"]
+	var totalFinaleR = totale[titre]
+	var moyenne=((parseInt(totalFinaleR))*(NumberOftotalId-1)+(parseInt(charme)+parseInt(charisme)+parseInt(eloquence)+parseInt(beaute)))/NumberOftotalId
+	firebase.database().ref("Total/"+titre).set(moyenne);
+	var classement = firebase.database().ref("Total");
+	classement.on('value', snapshot => {classementT = snapshot.val()})
+	console.log("classement :",classementT)
+	//classementT = Object.values(result)
+		classementTableauRegion = (Object.keys(classementT));
+		classementTableauNote = (Object.values(classementT));
+	
+	console.log("classement !!!!:",classementTableauRegion)
+	console.log("classement Note!!!!:",classementTableauNote)
+	nextPage=1;
+  }	
+
   function onClickDoubleRegion(image1, nomDeRegion1, infoMisstext,lesNote, image2, nomDeRegion2, infoMisstext2) {
 	if(click)
 	{
 		region = image1;
 		titre = nomDeRegion1
 		infoMiss = infoMisstext
-		console.log("value click !", click);
 		click=false;
 		notes = lesNote["lesNote"];
 		noteRegion = notes[nomDeRegion1];
@@ -352,7 +437,6 @@ function onClickRegion(image, nomDeRegion, infoMisstext, lesNote) {
 		region = image2;
 		titre = nomDeRegion2
 		infoMiss = infoMisstext2
-		console.log("value click !", click);
 		click=true;
 		notes = lesNote["lesNote"];
 		noteRegion = notes[nomDeRegion2];	
