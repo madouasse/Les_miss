@@ -201,7 +201,7 @@ class App extends Component {
     else
     {
       this.setState({
-        etatId: "Tout es Faux ! Zéro ! T'es mauvais !",
+        etatId: "Tout est Faux ! Zéro ! T'es mauvais !",
       });    
     }
   }
