@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/Les_miss/static/css/main.340f20c8.chunk.css",
-    "main.js": "/Les_miss/static/js/main.f6e6ba92.chunk.js",
-    "main.js.map": "/Les_miss/static/js/main.f6e6ba92.chunk.js.map",
+    "main.css": "/Les_miss/static/css/main.1a6cc236.chunk.css",
+    "main.js": "/Les_miss/static/js/main.952d829f.chunk.js",
+    "main.js.map": "/Les_miss/static/js/main.952d829f.chunk.js.map",
     "runtime-main.js": "/Les_miss/static/js/runtime-main.66b79d06.js",
     "runtime-main.js.map": "/Les_miss/static/js/runtime-main.66b79d06.js.map",
     "static/css/2.f1b50ea8.chunk.css": "/Les_miss/static/css/2.f1b50ea8.chunk.css",
-    "static/js/2.d938ddac.chunk.js": "/Les_miss/static/js/2.d938ddac.chunk.js",
-    "static/js/2.d938ddac.chunk.js.map": "/Les_miss/static/js/2.d938ddac.chunk.js.map",
+    "static/js/2.7d865ac5.chunk.js": "/Les_miss/static/js/2.7d865ac5.chunk.js",
+    "static/js/2.7d865ac5.chunk.js.map": "/Les_miss/static/js/2.7d865ac5.chunk.js.map",
     "index.html": "/Les_miss/index.html",
-    "precache-manifest.d587a0decfcc7cd156ec338d81a5b37a.js": "/Les_miss/precache-manifest.d587a0decfcc7cd156ec338d81a5b37a.js",
+    "precache-manifest.2722549cdf56b032d5563cb5f3b2f27d.js": "/Les_miss/precache-manifest.2722549cdf56b032d5563cb5f3b2f27d.js",
     "service-worker.js": "/Les_miss/service-worker.js",
     "static/css/2.f1b50ea8.chunk.css.map": "/Les_miss/static/css/2.f1b50ea8.chunk.css.map",
-    "static/css/main.340f20c8.chunk.css.map": "/Les_miss/static/css/main.340f20c8.chunk.css.map",
-    "static/js/2.d938ddac.chunk.js.LICENSE.txt": "/Les_miss/static/js/2.d938ddac.chunk.js.LICENSE.txt",
+    "static/css/main.1a6cc236.chunk.css.map": "/Les_miss/static/css/main.1a6cc236.chunk.css.map",
+    "static/js/2.7d865ac5.chunk.js.LICENSE.txt": "/Les_miss/static/js/2.7d865ac5.chunk.js.LICENSE.txt",
     "static/media/Aquitaine.png": "/Les_miss/static/media/Aquitaine.483c6f4f.png",
     "static/media/Auvergne.png": "/Les_miss/static/media/Auvergne.595e535c.png",
     "static/media/Bourgogne.png": "/Les_miss/static/media/Bourgogne.b6a47ffd.png",
@@ -56,8 +56,8 @@
   "entrypoints": [
     "static/js/runtime-main.66b79d06.js",
     "static/css/2.f1b50ea8.chunk.css",
-    "static/js/2.d938ddac.chunk.js",
-    "static/css/main.340f20c8.chunk.css",
-    "static/js/main.f6e6ba92.chunk.js"
+    "static/js/2.7d865ac5.chunk.js",
+    "static/css/main.1a6cc236.chunk.css",
+    "static/js/main.952d829f.chunk.js"
   ]
 }
