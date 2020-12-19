@@ -338,7 +338,7 @@ const Carte = (lesNote) => (
 			<TableHead>
 			<TableRow>
 				<TableCell>Region</TableCell>
-				<TableCell align="right">Notes</TableCell>
+				<TableCell align="left">Notes</TableCell>
 			</TableRow>
 			</TableHead>
 			<TableBody>
@@ -347,8 +347,7 @@ const Carte = (lesNote) => (
 				<TableCell component="th" scope="row">
 					{row}
 				</TableCell>
-				<TableCell align="right">{classementTableauRegion[row]}</TableCell>
-				<TableCell align="right">{classementT[row]}</TableCell>
+				<TableCell align="left">{classementT[row]}</TableCell>
 				</TableRow>
 			))}
 			</TableBody>
